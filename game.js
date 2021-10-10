@@ -10,15 +10,18 @@ function computerPlay() {
 }
 function playRound(playerSelection, computerSelection) {
     if ((playerSelection === 'rock' && computerSelection === 'scissors')||(playerSelection === 'paper' && computerSelection === 'rock')||(playerSelection === 'scissors' && computerSelection === 'paper')) {
-        return alert ('YOU WIN');
+        return console.log('WIN');
     } else if ((playerSelection === 'rock' && computerSelection === 'paper')||(playerSelection === 'paper' && computerSelection === 'scissors')||(playerSelection === 'scissors' && computerSelection === 'rock')) {
-        return alert ('YOU LOSE T_T');
+        return console.log('LOSE');
     } else if ((playerSelection === 'rock' && computerSelection === 'rock')||(playerSelection === 'paper' && computerSelection === 'paper')||(playerSelection === 'scissors' && computerSelection === 'scissors')) {
-        return alert('DRAW');
+        return console.log('DRAW');
     } else {
-        return alert('LOL INVALID');
+        return console.log('LOL ERROR');
     }
 }
 const playerSelection = prompt('CHOOSE YOUR WEAPON').toLowerCase();
 const computerSelection = computerPlay();
-console.log(playRound(playerSelection, computerSelection));
+
+function game() {
+}
+console.log(game());
