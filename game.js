@@ -8,20 +8,26 @@ function computerPlay() {
         return 'rock';
     }
 }
-function playRound(playerSelection, computerSelection) {
-    if ((playerSelection === 'rock' && computerSelection === 'scissors')||(playerSelection === 'paper' && computerSelection === 'rock')||(playerSelection === 'scissors' && computerSelection === 'paper')) {
-        return console.log('WIN');
-    } else if ((playerSelection === 'rock' && computerSelection === 'paper')||(playerSelection === 'paper' && computerSelection === 'scissors')||(playerSelection === 'scissors' && computerSelection === 'rock')) {
-        return console.log('LOSE');
-    } else if ((playerSelection === 'rock' && computerSelection === 'rock')||(playerSelection === 'paper' && computerSelection === 'paper')||(playerSelection === 'scissors' && computerSelection === 'scissors')) {
-        return console.log('DRAW');
+function playRound() {
+  const playerSelection = prompt('CHOOSE YOUR WEAPON').toLowerCase();
+  const computerSelection = computerPlay();
+    if ((playerSelection === 'rock' && computerSelection === 'scissors') ||
+    (playerSelection === 'paper' && computerSelection === 'rock') ||
+    (playerSelection === 'scissors' && computerSelection === 'paper')) {
+        return 'win';
+    } else if ((playerSelection === 'rock' && computerSelection === 'paper') ||
+    (playerSelection === 'paper' && computerSelection === 'scissors') ||
+    (playerSelection === 'scissors' && computerSelection === 'rock')) {
+        return 'lose';
     } else {
-        return console.log('LOL ERROR');
+        return 'draw';
     }
 }
-const playerSelection = prompt('CHOOSE YOUR WEAPON').toLowerCase();
-const computerSelection = computerPlay();
+
 
 function game() {
+    for (let i = 0; i < 5; i++) {
+        console.log(playRound());
+    }
 }
 console.log(game());
