@@ -28,16 +28,15 @@ function playRound() {
 let userScore = parseInt(0);
 let computerScore = parseInt(0);
 
-
-function game(i) {
-    console.log(playRound());
-    console.log('Player Score = ' +userScore);
-    console.log('Computer Score = ' +computerScore);
-    if (i <= 5) {
-        game();
-    } else {
-        alert('GAME OVER => Player ('+userScore+') vs Computer ('+computerScore+')');
+function game() {
+    for (i = 0; i < 5; i++) {
+        console.log(playRound());
+        console.log('Player Score = ' +userScore);
+        console.log('Computer Score = ' +computerScore); 
     }
-    i++;
+    if (i === 5) {
+        return alert('Game Over => Player ('+userScore+') vs Computer ('+computerScore+')');
+    }
+
 }
-console.log(game(0));
+console.log(game());
