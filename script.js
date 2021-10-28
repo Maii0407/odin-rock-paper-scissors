@@ -1,14 +1,28 @@
 // event listener for player selection
 const selections = document.querySelectorAll('.selection');
-selections.forEach(selection => selection.addEventListener('click', playRound));
+selections.forEach(selection => selection.addEventListener('click', playGame));
 
-// play 1 round of rock paper scissors
-function playRound(e) {
+//player choices for console.log
+const rock = document.querySelector('#rock');
+const paper = document.querySelector('#paper');
+const scissors = document.querySelector('#scissors');
+
+//player and computer score
+let playerScore = parseInt(0);
+let computerScore = parseInt(0);
+
+// play round of rock paper scissors
+function playGame(e) {
     const playerSelection = e.target.id;
     const computerSelection = computerPlay();
+    const result = getResult(playerSelection, computerSelection);
+    const endGame = keepScore();
 
     console.log(playerSelection, computerSelection);
+}
 
+//gets result of game
+function getResult(playerSelection, computerSelection){
     if ((playerSelection === 'rock' && computerSelection === 'scissors') ||
     (playerSelection === 'paper' && computerSelection === 'rock') ||
     (playerSelection === 'scissors' && computerSelection === 'paper')) { 
@@ -36,10 +50,6 @@ function computerPlay() {
     }
 }
 
-//player and computer score
-let playerScore = parseInt(0);
-let computerScore = parseInt(0);
-
 //keep score and announce winner
 function keepScore () {
     if (playerScore === 5){
@@ -47,6 +57,6 @@ function keepScore () {
     } else if (computerScore === 5){
         alert('LOL U GOT BEAT BY A ROBOT');
     } else {
-        alert('error');
+        return;
     }
 }
