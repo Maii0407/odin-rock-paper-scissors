@@ -51,7 +51,7 @@ function computerPlay() {
 }
 
 //keep score and announce winner
-function keepScore () {
+function keepScore() {
     if (playerScore === 5){
         alert('CONGRATULATIONS YOU WIN');
     } else if (computerScore === 5){
@@ -59,4 +59,9 @@ function keepScore () {
     } else {
         return;
     }
+}
+
+//show who wins who loses
+function showResult(result, computerSelection){
+
 }
