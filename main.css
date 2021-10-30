@@ -1,9 +1,18 @@
 body {
     background-color: grey;
 }
+.header-container {
+    display: flex;
+    justify-content: center;
+    padding-top: 20px;
+}
+h1 {
+    font-size: 50px;
+}
 .selections {
     display: flex;
     justify-content: center;
+    padding-top: 20px;
 }
 .selection {
     width: 200px;
@@ -12,4 +21,12 @@ body {
 }
 .selection:hover {
     background-color: gainsboro;
+}
+#scoreContainer {
+    display: flex;
+    justify-content: center;
+    padding-top: 20px;
+}
+.red-line {
+    border: 1px solid red;
 }
